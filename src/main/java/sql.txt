@@ -1,13 +1,34 @@
 CREATE TABLE student
 (
-    student_id INT PRIMARY KEY,
-    name       VARCHAR(20),
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name       VARCHAR(20) unique,
     major      VARCHAR(20)
 );
 
 drop table student;
 
-Select * from student;
+Select *
+from student;
 
-INSERT INTO student(student_id, name) VALUES (3, 'Claire');
+INSERT INTO student(name, major)
+VALUES ('Jack', 'Biology');
+INSERT INTO student(name, major)
+VALUES ('Claire', 'Economics');
+INSERT INTO student(name, major)
+VALUES ('Max', 'Geography');
+INSERT INTO student(name, major)
+values ('Wall-E', 'Trash');
 
+UPDATE student
+SET major = 'Comp Sci'
+Where major = 'Geography'
+   OR major = 'Biology';
+
+SELECT name, major
+FROM student
+order by major, student_id
+LIMIT 2;
+
+Select name, major FROM student
+where major = 'Comp Sci' AND name <> 'Jack'
+limit 3;
