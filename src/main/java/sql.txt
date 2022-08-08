@@ -46,3 +46,4 @@ FROM client
          JOIN branch b on client.branch_id = b.branch_id
          JOIN employee e on b.branch_id = e.branch_id
          where e.first_name = 'Michael';
+         Well, guess that'll do
