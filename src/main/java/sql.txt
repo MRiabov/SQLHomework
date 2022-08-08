@@ -1,11 +1,11 @@
-INSERT into employee values(100,'David','Wallace','1967-11,17','M',250000,NULL,NULL);
-SELECT * from employee;
-INSERT INTO branch VALUES(1,'Corporate',100,'2006-02-09');
-select *from branch;
+SELECT distinct branch_id from employee;
 
-UPDATE employee set branch_id=1 WHERE emp_id=100;
+select avg(salary) from employee;
 
-INSERT INTO employee VALUES(103, 'Angela', 'Martin', '1971-06-25', 'F', 63000, 102, 2);
-INSERT INTO employee VALUES(104, 'Kelly', 'Kapoor', '1980-02-05', 'F', 55000, 102, 2);
-INSERT INTO employee VALUES(105, 'Stanley', 'Hudson', '1958-02-19', 'M', 69000, 102, 2);
-VALUES(106, 'Josh', 'Porter', '1969-09-05', 'M', 78000, 100, NULL);
+GROUP BY emp_id;
+
+SELECT SUM(total_sales), client_id FROM works_with
+group by client_id;
+
+SELECT * FROM client WHERE client_name LIKE '%LLC';
+select * from client;
