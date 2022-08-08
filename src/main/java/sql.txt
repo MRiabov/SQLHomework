@@ -1,34 +1,11 @@
-CREATE TABLE student
-(
-    student_id INT PRIMARY KEY AUTO_INCREMENT,
-    name       VARCHAR(20) unique,
-    major      VARCHAR(20)
-);
+INSERT into employee values(100,'David','Wallace','1967-11,17','M',250000,NULL,NULL);
+SELECT * from employee;
+INSERT INTO branch VALUES(1,'Corporate',100,'2006-02-09');
+select *from branch;
 
-drop table student;
+UPDATE employee set branch_id=1 WHERE emp_id=100;
 
-Select *
-from student;
-
-INSERT INTO student(name, major)
-VALUES ('Jack', 'Biology');
-INSERT INTO student(name, major)
-VALUES ('Claire', 'Economics');
-INSERT INTO student(name, major)
-VALUES ('Max', 'Geography');
-INSERT INTO student(name, major)
-values ('Wall-E', 'Trash');
-
-UPDATE student
-SET major = 'Comp Sci'
-Where major = 'Geography'
-   OR major = 'Biology';
-
-SELECT name, major
-FROM student
-order by major, student_id
-LIMIT 2;
-
-Select name, major FROM student
-where major = 'Comp Sci' AND name <> 'Jack'
-limit 3;
+INSERT INTO employee VALUES(103, 'Angela', 'Martin', '1971-06-25', 'F', 63000, 102, 2);
+INSERT INTO employee VALUES(104, 'Kelly', 'Kapoor', '1980-02-05', 'F', 55000, 102, 2);
+INSERT INTO employee VALUES(105, 'Stanley', 'Hudson', '1958-02-19', 'M', 69000, 102, 2);
+VALUES(106, 'Josh', 'Porter', '1969-09-05', 'M', 78000, 100, NULL);
