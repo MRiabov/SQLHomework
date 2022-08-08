@@ -1,11 +1,48 @@
-SELECT distinct branch_id from employee;
+SELECT distinct branch_id
+from employee;
+select sum(salary)
+from employee
+where sex = 'M';
 
-select avg(salary) from employee;
-
+SELECT SUM(total_sales), emp_id
+FROM works_with
 GROUP BY emp_id;
 
-SELECT SUM(total_sales), client_id FROM works_with
+SELECT SUM(total_sales), client_id
+FROM works_with
 group by client_id;
 
-SELECT * FROM client WHERE client_name LIKE '%LLC';
-select * from client;
+SELECT *
+FROM client
+WHERE client_name LIKE '';
+select *
+from client;
+
+Select *
+from employee
+where birth_day LIKE '____-10%';
+
+SELECT first_name
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+INSERT INTO branch
+VALUES (4, 'BUFFALO', NULL, NULL);
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+         JOIN branch ON employee.emp_id = branch.mgr_id;
+
+
+SELECT employee.first_name, employee.emp_id, ww.total_sales
+FROM employee
+         JOIN works_with ww on employee.emp_id = ww.emp_id
+where ww.total_sales > 30000;
+
+SELECT client_name
+FROM client
+         JOIN branch b on client.branch_id = b.branch_id
+         JOIN employee e on b.branch_id = e.branch_id
+         where e.first_name = 'Michael';
